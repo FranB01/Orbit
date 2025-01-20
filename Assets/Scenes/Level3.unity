@@ -1533,6 +1533,18 @@ PrefabInstance:
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1181471131650290393, guid: 08fb035c8ef8169459eebe21a2fed17d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3600481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181471131650290393, guid: 08fb035c8ef8169459eebe21a2fed17d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3600481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181471131650290393, guid: 08fb035c8ef8169459eebe21a2fed17d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181471131650290393, guid: 08fb035c8ef8169459eebe21a2fed17d, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 213
       objectReference: {fileID: 0}
