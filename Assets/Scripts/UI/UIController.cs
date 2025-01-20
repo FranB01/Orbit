@@ -24,12 +24,8 @@ public class UIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
+            settingsUI.gameObject.SetActive(false);
         }
-    }
-
-    public void TestButton()
-    {
-        Debug.Log("Button pressed");
     }
 
     public void TogglePause()
