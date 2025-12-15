@@ -13,16 +13,11 @@ public class GameControl : MonoBehaviour
     [SerializeField] private AudioClip coinClip;
     [SerializeField] private AudioClip musicClip;
 
-    // Start is called before the first frame update
     void Start()
     {
         sfxAudioSource = GetComponentInChildren<AudioSource>();
-        Time.timeScale = 1;
-    }
+        //Time.timeScale = 1;
 
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void TogglePause()
