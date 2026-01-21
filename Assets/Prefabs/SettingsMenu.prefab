@@ -789,6 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5028836875909153186}
   - component: {fileID: 53511865267744614}
+  - component: {fileID: 1697660887783268555}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -870,8 +871,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 984011273721435370}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+      - m_Target: {fileID: 1697660887783268555}
+        m_TargetAssemblyTypeName: VolumeBarController, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -882,6 +883,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1697660887783268555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549578454541832443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37c1e3e1d7aa2642bd4f48e0c5e525c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: d1722583993e12740bd0edfc8620b6e0, type: 2}
+  volumeParameter: SFXVolume
 --- !u!1 &4637675289217430764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2736519451278807968}
   - component: {fileID: 3105209813356806510}
+  - component: {fileID: 8109203813345350962}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -1234,8 +1250,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 984011273721435370}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+      - m_Target: {fileID: 8109203813345350962}
+        m_TargetAssemblyTypeName: VolumeBarController, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -1246,6 +1262,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8109203813345350962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510225034398090662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37c1e3e1d7aa2642bd4f48e0c5e525c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: afe39db1b1654a449b1a650366cc0bf2, type: 2}
+  volumeParameter: MusicVolume
 --- !u!1 &6544941413084517752
 GameObject:
   m_ObjectHideFlags: 0

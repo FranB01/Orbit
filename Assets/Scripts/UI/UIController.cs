@@ -23,8 +23,11 @@ public class UIController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
-            settingsUI.gameObject.SetActive(false);
+            if (gc.canPause)
+            {
+                TogglePause();
+                settingsUI.gameObject.SetActive(false);
+            }
         }
     }
 

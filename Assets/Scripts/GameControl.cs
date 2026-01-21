@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
     private bool paused = false;
+    public bool canPause = true;
     private AudioSource sfxAudioSource;
     private int coins = 0;
     [SerializeField] private AudioClip coinClip;
@@ -17,19 +18,21 @@ public class GameControl : MonoBehaviour
     {
         sfxAudioSource = GetComponentInChildren<AudioSource>();
         //Time.timeScale = 1;
-
     }
 
     public void TogglePause()
     {
-        paused = !paused;
-        if (paused)
+        if (canPause)
         {
-            Pause();
-        }
-        else
-        {
-            Unpause();
+            paused = !paused;
+            if (paused)
+            {
+                Pause();
+            }
+            else
+            {
+                Unpause();
+            }
         }
     }
 
@@ -56,6 +59,7 @@ public class GameControl : MonoBehaviour
 
     public IEnumerator GameOver()
     {
+        canPause = false;
         yield return new WaitForSecondsRealtime(1f);
         RestartLevel();
     }

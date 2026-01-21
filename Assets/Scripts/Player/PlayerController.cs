@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private bool orbiting = false;
     private float speed = 5.0f;
     private int orbitingDirection;
-    private bool dead = false;
+    public bool moving = false;
     private bool winning = false;
 
     private Vector2 positionBeforeWinning;
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!dead && !winning)
+        if (moving && !winning)
         {
             if (orbiting)
             {
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        dead = true;
+        moving = false;
         sr.enabled = false;
         StartCoroutine(gc.GameOver());
     }

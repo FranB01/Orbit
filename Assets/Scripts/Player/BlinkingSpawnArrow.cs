@@ -12,17 +12,18 @@ public class BlinkingSpawnArrow : MonoBehaviour
     [SerializeField] private AudioClip sound;
     [SerializeField] private AudioSource audioSource;
     private SpriteRenderer sprite;
+    private PlayerController player;
 
     void Start()
     {
         sprite  = GetComponent<SpriteRenderer>();
+        player = GetComponentInParent<PlayerController>();
         Blink();
     }
 
     public void Blink()
     {
         blinking = true;
-        Time.timeScale = 0;
         StartCoroutine(BlinkAndWait());
     }
 
@@ -33,16 +34,16 @@ public class BlinkingSpawnArrow : MonoBehaviour
         {
             yield return StartCoroutine(BlinkCoroutine());
         }
-        Time.timeScale = 1;
+        player.moving = true;
     }
 
     private IEnumerator BlinkCoroutine()
     {
         audioSource.PlayOneShot(sound);
         sprite.enabled = true;
-        yield return new WaitForSecondsRealtime(blinkTimeOn);
+        yield return new WaitForSeconds(blinkTimeOn);
         sprite.enabled = false;
-        yield return new WaitForSecondsRealtime(blinkTimeOff);
+        yield return new WaitForSeconds(blinkTimeOff);
     }
 
     

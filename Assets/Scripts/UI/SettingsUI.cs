@@ -13,58 +13,69 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private AudioMixer sfxMixer;
     [SerializeField] private AudioMixer musicMixer;
 
-    // Start is called before the first frame update
+    private const string SFX_PARAM = "SFXVolume";
+    private const string MUSIC_PARAM = "MusicVolume";
+    private const string SCREENSHAKE_PARAM = "ScreenShake";
+
     void Start()
     {
-        if (!PlayerPrefs.HasKey("SFXVolume"))
+        /*if (!PlayerPrefs.HasKey(SFX_PARAM))
         {
             Debug.Log("SFX volume not set");
-            PlayerPrefs.SetFloat("SFXVolume", 1f);
+            PlayerPrefs.SetFloat(SFX_PARAM, 1f);
         }
 
-        if (!PlayerPrefs.HasKey("MusicVolume"))
+        if (!PlayerPrefs.HasKey(MUSIC_PARAM))
         {
             Debug.Log("Music volume not set");
-            PlayerPrefs.SetFloat("MusicVolume", 1f);
+            PlayerPrefs.SetFloat(MUSIC_PARAM, 1f);
         }
-
-        if (!PlayerPrefs.HasKey("ScreenShake"))
+        */
+        if (!PlayerPrefs.HasKey(SCREENSHAKE_PARAM))
         {
             Debug.Log("Screen shake not set");
-            PlayerPrefs.SetInt("ScreenShake", 1);
+            PlayerPrefs.SetInt(SCREENSHAKE_PARAM, 1);
         }
-
-        //Debug.Log("SFX volume: " + PlayerPrefs.GetFloat("SFXVolume"));
-        //Debug.Log("Music volume: " + PlayerPrefs.GetFloat("MusicVolume"));
+        /*
+        Debug.Log("SFX volume: " + PlayerPrefs.GetFloat(SFX_PARAM));
+        Debug.Log("Music volume: " + PlayerPrefs.GetFloat(MUSIC_PARAM));
+        */
         Load();
     }
 
     private void Load()
     {
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        screenShakeToggle.isOn = PlayerPrefs.GetInt("ScreenShake") == 1;
+        /*
+        sfxMixer.SetFloat(SFX_PARAM, Mathf.Log10(PlayerPrefs.GetFloat(SFX_PARAM)) * 20);
+        musicMixer.SetFloat(MUSIC_PARAM, Mathf.Log10(PlayerPrefs.GetFloat(MUSIC_PARAM)) * 20);
 
-        Set();
+        sfxSlider.value = PlayerPrefs.GetFloat(SFX_PARAM);
+        musicSlider.value = PlayerPrefs.GetFloat(MUSIC_PARAM);
+        */
+        screenShakeToggle.isOn = PlayerPrefs.GetInt(SCREENSHAKE_PARAM) == 1;
     }
 
     public void Save()
     {
-        PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
-        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
-        PlayerPrefs.SetInt("ScreenShake", screenShakeToggle.isOn ? 1 : 0);
-
+        /*
+        PlayerPrefs.SetFloat(SFX_PARAM, sfxSlider.value);
         PlayerPrefs.Save();
-        
-        Set();
-    }
+        PlayerPrefs.SetFloat(MUSIC_PARAM, musicSlider.value);
+        PlayerPrefs.Save();
+        */
+        PlayerPrefs.SetInt(SCREENSHAKE_PARAM, screenShakeToggle.isOn ? 1 : 0);
+        PlayerPrefs.Save();
 
+        
+        //Set();
+    }
+    /*
     private void Set()
     {
-        sfxMixer.SetFloat("SFXVolume", Mathf.Log10(sfxSlider.value) * 20);
-        musicMixer.SetFloat("MusicVolume", Mathf.Log10(musicSlider.value) * 20);
+        sfxMixer.SetFloat(SFX_PARAM, Mathf.Log10(sfxSlider.value) * 20);
+        musicMixer.SetFloat(MUSIC_PARAM, Mathf.Log10(musicSlider.value) * 20);
     }
-
+    */
     public void CloseMenu()
     {
         gameObject.SetActive(false);
