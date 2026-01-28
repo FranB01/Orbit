@@ -32,19 +32,9 @@ public class MainMenuUI : MonoBehaviour
     }
 
     // CRAPPY, CHANGE IN FINAL VERSION
-    public void ButtonLv1()
+    public void ButtonLevel(string level)
     {
-        SceneManager.LoadScene("Level1");
-    }
-
-    public void ButtonLv2()
-    {
-        SceneManager.LoadScene("Level2");
-    }
-
-    public void ButtonLv3()
-    {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(level);
     }
 
     public void ButtonCloseLevelSelect()
